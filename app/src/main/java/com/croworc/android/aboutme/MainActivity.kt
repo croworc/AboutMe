@@ -3,6 +3,7 @@ package com.croworc.android.aboutme
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
@@ -10,6 +11,8 @@ import com.croworc.android.aboutme.data.MyName
 import com.croworc.android.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private val LOG_TAG = "MainActivity"
 
     private lateinit var binding: ActivityMainBinding
 
@@ -30,12 +33,15 @@ class MainActivity : AppCompatActivity() {
     private fun addNickname(doneButton: View) {
 
         binding.apply {
-            myName?.nickname = nicknameEdit.text.toString() /* We're assigning the nickname the user has entered in the
-                                                               EditText to the respective property of our data class
-                                                               instance. As this object is bound to the layout, the
-                                                               nickname will then *automatically* be shown in
-                                                               the TextView.
-                                                            */
+            myName?.nickname = binding.nicknameEdit.text.toString()
+                                                           /* We're assigning the nickname the user has entered in the
+                                                              EditText to the respective property of our data class
+                                                              instance. However, this happens indirectly, via its
+                                                              reference in the binding object.
+                                                              As this data class object is bound to the layout, the
+                                                              nickname will then *automatically* be shown in
+                                                              the TextView.
+                                                           */
             invalidateAll()                                 // Re-draw the views, so that the new data is shown
             nicknameEdit.visibility = View.GONE             // Hide the EditText
             doneButton.visibility = View.GONE               // Hide the DONE button
