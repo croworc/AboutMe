@@ -3,6 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="myName"
+            type="com.croworc.android.aboutme.data.MyName"/>
+
+    </data>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,15 +19,16 @@
         android:paddingEnd="@dimen/padding"
         tools:context=".MainActivity">
 
-
+        <!-- Displays the "real" name -->
         <TextView
             android:id="@+id/name_text"
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:text="@={myName.name}"
             android:textAlignment="center" />
 
+        <!-- Here you enter your nickname -->
         <EditText
             android:id="@+id/nickname_edit"
             style="@style/NameStyle"
@@ -30,6 +39,7 @@
             android:inputType="textPersonName"
             android:textAlignment="center" />
 
+        <!-- Triggers the display of the nickname and hides the EditText and the button itself -->
         <Button
             android:id="@+id/done_button"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -41,13 +51,15 @@
             android:text="@string/done"
             tools:text="@string/done" />
 
+        <!-- Displays the nickname in a read-only TextView -->
         <TextView
             android:id="@+id/nickname_text"
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:text="@={myName.nickname}"/>
 
         <ImageView
             android:id="@+id/star_image"
