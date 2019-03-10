@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <!-- Binds the MyName object that will be instantiated in MainActivity to this layout -->
         <variable
             name="myName"
-            type="com.croworc.android.aboutme.data.MyName"/>
-
+            type="com.croworc.android.aboutme.data.MyName" />
     </data>
 
 
@@ -57,10 +57,11 @@
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@={myName.nickname}"
             android:textAlignment="center"
-            android:visibility="gone"
-            android:text="@={myName.nickname}"/>
+            android:visibility="gone" />
 
+        <!-- Just an example of an simple ImageView -->
         <ImageView
             android:id="@+id/star_image"
             android:layout_width="match_parent"
@@ -69,11 +70,11 @@
             android:contentDescription="@string/yellow_star"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 
+        <!-- This ScrollView's only child isn't a ViewGroup but a simple View (TextView) -->
         <ScrollView
             android:id="@+id/bio_scroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
             <TextView
                 android:id="@+id/bio_text"
