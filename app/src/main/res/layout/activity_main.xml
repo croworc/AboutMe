@@ -34,9 +34,10 @@
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/what_is_your_nickname"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textCapSentences"
             android:textAlignment="center" />
 
         <!-- Triggers the display of the nickname and hides the EditText and the button itself -->
