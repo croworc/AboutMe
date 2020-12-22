@@ -3,7 +3,6 @@ package com.croworc.android.aboutme
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
@@ -11,8 +10,6 @@ import com.croworc.android.aboutme.data.MyName
 import com.croworc.android.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-    private val LOG_TAG = "MainActivity"
 
     private lateinit var binding: ActivityMainBinding
 
