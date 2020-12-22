@@ -17,7 +17,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
+
+        // Inflate the layout, set it as this activity's content view, create the binding object and
+        // assign it to the binding variable
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.myName = myName // Assign the MyName class instance to the binding class's myName variable
