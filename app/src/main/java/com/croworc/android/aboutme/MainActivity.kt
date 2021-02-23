@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.doneButton.setOnClickListener {
             addNickname(it)
         }
-    }
+    } // close method onCreate()
 
     private fun addNickname(doneButton: View) {
 
@@ -50,5 +50,7 @@ class MainActivity : AppCompatActivity() {
         // Hide the keyboard
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(doneButton.windowToken, 0)
-    }
+
+    } // close method addNickname
+
 }
