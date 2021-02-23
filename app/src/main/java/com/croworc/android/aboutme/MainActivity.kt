@@ -63,6 +63,13 @@ class MainActivity : AppCompatActivity() {
             nicknameEdit.visibility = View.VISIBLE    // Show the EditText
             doneButton.visibility = View.VISIBLE      // Show the DONE button
             nicknameText.visibility = View.GONE       // Hide the nickname TextView
+
+            // Set the focus to the EditText
+            nicknameEdit.requestFocus()
+            // Show the keyboard
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(nicknameEdit, 0)
+
         }
     } // close method updateNickname()
 
