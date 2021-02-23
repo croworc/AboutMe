@@ -27,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         binding.doneButton.setOnClickListener {
             addNickname(it)
         }
+
+        binding.nicknameText.setOnClickListener {
+            updateNickname()
+        }
+
     } // close method onCreate()
 
     private fun addNickname(doneButton: View) {
@@ -53,4 +58,12 @@ class MainActivity : AppCompatActivity() {
 
     } // close method addNickname
 
-}
+    private fun updateNickname() {
+        binding.apply {
+            nicknameEdit.visibility = View.VISIBLE    // Show the EditText
+            doneButton.visibility = View.VISIBLE      // Show the DONE button
+            nicknameText.visibility = View.GONE       // Hide the nickname TextView
+        }
+    } // close method updateNickname()
+
+} // close class MainActivity
